@@ -1,0 +1,37 @@
+/** Store list:
+paper (3)
+journals (10)
+folders (2)
+pens (5)
+sticky notes (2.50)
+pencils (2)
+stapler (4)
+binder (10)
+tacks (3)
+paper clips (6)
+glue (3)
+washi tape (5)
+card stock (4)
+construction paper (4)
+paper weight (8)
+**/
+
+CREATE TABLE gray_store_items (id INTEGER PRIMARY KEY, product TEXT, price NUMERIC, quantity INTEGER, aisle INTEGER);
+INSERT INTO gray_store_items VALUES (1, "paper", 3, 20, 1);
+INSERT INTO gray_store_items VALUES (2, "journals", 10, 15, 3);
+INSERT INTO gray_store_items VALUES (3, "folders", 2, 13, 4);
+INSERT INTO gray_store_items VALUES (4, "pens", 5, 20, 5) ;
+INSERT INTO gray_store_items VALUES (5, "sticky notes", 2.50, 15, 1);
+INSERT INTO gray_store_items VALUES (6, "pencils", 2, 25, 5);
+INSERT INTO gray_store_items VALUES (7, "stapler", 4, 5, 1);
+INSERT INTO gray_store_items VALUES (8, "binder", 10, 12, 4);
+INSERT INTO gray_store_items VALUES (9, "tacks", 3, 20, 5);
+INSERT INTO gray_store_items VALUES (10, "paper clips", 6, 15, 5);
+INSERT INTO gray_store_items VALUES (11, "glue", 3, 30, 4);
+INSERT INTO gray_store_items VALUES (12, "washi tape", 5, 15, 5);
+INSERT INTO gray_store_items VALUES (13, "card stock", 4, 20, 1);
+INSERT INTO gray_store_items VALUES (14, "construction paper", 4, 20, 1);
+INSERT INTO gray_store_items VALUES (15, "paper weight", 8, 12, 2);
+SELECT aisle, SUM(quantity) FROM gray_store_items GROUP BY aisle;
+
+Select product, SUM(price) From gray_store_items GROUP BY product;
